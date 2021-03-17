@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Guess the Number</title>
+        <meta charset="utf-8"></meta>
+        <h:outputStylesheet library="style" name="guess.css" />
+        <!--<h:graphicImage id="tete" alt="homer_thinking" library="images" name="homer_thinking.png" />-->
+    </h:head>
+    <h:body>
+        <div id="content">
+            
+            <!-- MESSAGE -->
+            <div id="bigBubble">
+                <p id="text">
+                    <h:outputText value="#{aleaBean.phrase}" escape="false" />
+                </p>
+                <div id="mediumBubble"></div>
+                <div id="smallBubble"></div>
+            </div>
+            
+            <!-- IMAGE -->
+            <h:graphicImage id="tete" library="images" name="homer_thinking.png" alt="tete "/>
+            
+            <!-- DEVINER -->
+            <h:form id="proposition">
+                <h:inputText id="nombre" title="Un nombre de 1 à 100" value="#{aleaBean.user}" size="2" />
+                <h:commandButton value="OK" action="#{aleaBean.compare()}" alt="comparer" />
+            </h:form>
+            
+            <!-- RECOMMENCER -->
+            <h:form id="recommencer">
+                <h:commandButton value="RECOMMENCER" action=" " alt="recommencer" />
+            </h:form>
+                
+        </div>
+        
+    </h:body>
+</html>
+
